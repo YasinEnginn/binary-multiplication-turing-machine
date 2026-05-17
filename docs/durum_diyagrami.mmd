@@ -1,0 +1,27 @@
+stateDiagram-v2
+    [*] --> q_start
+    q_start --> q_find_star: başla
+    q_find_star --> q_find_star: 0/1 oku, R
+    q_find_star --> q_return_left: * oku
+    q_return_left --> q_return_left: sola dön
+    q_return_left --> q_read_multiplicand: sol sınır
+    q_read_multiplicand --> q_read_multiplicand: 0/1 oku
+    q_read_multiplicand --> q_read_multiplier: * oku
+    q_read_multiplier --> q_read_multiplier: 0/1 oku
+    q_read_multiplier --> q_init_result: = oku
+    q_init_result --> q_seek_multiplier_bit: sonuç = 0
+    q_seek_multiplier_bit --> q_read_multiplier_bit: sağdan sola bit seç
+    q_read_multiplier_bit --> q_skip_zero: 0 -> x
+    q_skip_zero --> q_seek_multiplier_bit: sonraki shift
+    q_read_multiplier_bit --> q_copy_multiplicand: 1 -> y
+    q_copy_multiplicand --> q_add_partial: parçalı çarpım = multiplicand << shift
+    q_add_partial --> q_clear_work: ikili toplama
+    q_clear_work --> q_write_result: geçici alan temiz
+    q_write_result --> q_seek_multiplier_bit: sonuç güncel
+    q_seek_multiplier_bit --> q_restore_multiplier: bit kalmadı
+    q_restore_multiplier --> q_restore_multiplier: x->0, y->1
+    q_restore_multiplier --> q_accept: = konumu
+    q_accept --> [*]
+    q_find_star --> q_reject: geçersiz sembol
+    q_read_multiplicand --> q_reject: geçersiz sembol
+    q_read_multiplier --> q_reject: geçersiz sembol

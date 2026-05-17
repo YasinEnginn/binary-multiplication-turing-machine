@@ -1,0 +1,37 @@
+digraph BinaryMultiplierTM {
+  rankdir=LR;
+  graph [fontname="Arial", bgcolor="white", pad="0.25"];
+  node [shape=ellipse, fontname="Arial", fontsize=10, style="filled", fillcolor="#eef4ff", color="#355070"];
+  edge [fontname="Arial", fontsize=9, color="#34495e"];
+
+  start [shape=point, label=""];
+  q_accept [shape=doublecircle, fillcolor="#e8f7ee"];
+  q_reject [shape=doublecircle, fillcolor="#fdeaea"];
+
+  start -> q_start;
+  q_start -> q_find_star [label="başla"];
+  q_find_star -> q_find_star [label="0/1, R"];
+  q_find_star -> q_return_left [label="* bulundu"];
+  q_return_left -> q_return_left [label="sola dön"];
+  q_return_left -> q_read_multiplicand [label="sol sınır"];
+  q_read_multiplicand -> q_read_multiplicand [label="0/1 oku"];
+  q_read_multiplicand -> q_read_multiplier [label="* oku"];
+  q_read_multiplier -> q_read_multiplier [label="0/1 oku"];
+  q_read_multiplier -> q_init_result [label="= oku"];
+  q_init_result -> q_seek_multiplier_bit [label="sonuç=0"];
+  q_seek_multiplier_bit -> q_read_multiplier_bit [label="sağdan sola bit seç"];
+  q_read_multiplier_bit -> q_skip_zero [label="0 -> x"];
+  q_skip_zero -> q_seek_multiplier_bit [label="kaydırma artar"];
+  q_read_multiplier_bit -> q_copy_multiplicand [label="1 -> y"];
+  q_copy_multiplicand -> q_add_partial [label="parçalı çarpım yaz"];
+  q_add_partial -> q_clear_work [label="ikili topla"];
+  q_clear_work -> q_write_result [label="geçiciyi sil"];
+  q_write_result -> q_seek_multiplier_bit [label="sonucu yaz"];
+  q_seek_multiplier_bit -> q_restore_multiplier [label="bit kalmadı"];
+  q_restore_multiplier -> q_restore_multiplier [label="x->0, y->1"];
+  q_restore_multiplier -> q_accept [label="kabul"];
+
+  q_find_star -> q_reject [label="hata"];
+  q_read_multiplicand -> q_reject [label="hata"];
+  q_read_multiplier -> q_reject [label="hata"];
+}
