@@ -8,7 +8,7 @@
 | Öğrenci | Yasin Engin |
 | Öğrenci No | 23060510 |
 | Kullanılan Dil | Python |
-| Teslim İçeriği | Kaynak kod, geçiş tablosu, durum diyagramı, test örnekleri ve proje raporu |
+| Teslim İçeriği | Kaynak kod, geçiş tablosu, durum diyagramı, test örnekleri, program ekran görüntüleri ve proje raporu |
 | GitHub Linki | https://github.com/YasinEnginn/binary-multiplication-turing-machine |
 | YouTube Video Linki | https://youtu.be/dtmzvePSpGo |
 
@@ -75,7 +75,9 @@ Geçiş tablosu [docs/gecis_tablosu.md](docs/gecis_tablosu.md) dosyasında,
 durum geçiş diyagramı ise [docs/durum_diyagrami.png](docs/durum_diyagrami.png)
 dosyasında sunulmuştur.
 
-![Durum geçiş diyagramı](docs/durum_diyagrami.png)
+*Şekil 1. Tek bantlı binary çarpma makinesinin ana durum geçişleri.*
+
+![](docs/durum_diyagrami_rapor.png)
 
 ## 3. Binary Sayı Sistemi
 
@@ -228,7 +230,58 @@ Final bant: 11*10=110
 Daha fazla örnek çıktı [docs/ornek_ciktilar.md](docs/ornek_ciktilar.md)
 dosyasında yer almaktadır.
 
-## 9. Test Örnekleri
+## 9. Program Ekran Görüntüleri
+
+Bu bölümde, programın ödev gereksinimlerini karşıladığını gösteren gerçek
+çalıştırma ekranları verilmiştir. Görseller doğrudan PowerShell penceresinde
+komutlar çalıştırıldıktan sonra alınmıştır.
+
+![](docs/screenshots/01_program_izli_calistirma.png)
+
+*Şekil 2. `11 x 10` girdisi için `*` ayıracının bulunması, multiplier bitlerinin
+işaretlenmesi ve sonucun banda yazılması.*
+
+![](docs/screenshots/02_kisa_sonuc.png)
+
+*Şekil 3. İz çıktısı kapalıyken programın binary, decimal ve final bant sonucunu
+özetlemesi.*
+
+![](docs/screenshots/04_sifir_ile_carpma.png)
+
+*Şekil 4. `0 x 1011` örneğinde sonucun `0` olarak üretildiğini gösteren
+çalıştırma ekranı.*
+
+![](docs/screenshots/05_bir_ile_carpma.png)
+
+*Şekil 5. `1 x 11101` örneğinde ikinci operandın sonuç olarak korunduğunu
+gösteren çalıştırma ekranı.*
+
+![](docs/screenshots/06_cok_bitli_ornek.png)
+
+*Şekil 6. `1001 x 101` çok bitli çarpma örneğinin binary ve decimal sonucunu
+gösteren çalıştırma ekranı.*
+
+![](docs/screenshots/07_111_ile_111.png)
+
+*Şekil 7. `111 x 111` örneğinde final bant formatının korunduğunu gösteren
+çalıştırma ekranı.*
+
+![](docs/screenshots/08_gecersiz_girdi.png)
+
+*Şekil 8. Binary olmayan karakter içeren girişin program tarafından
+reddedildiğini gösteren hata ekranı.*
+
+![](docs/screenshots/11_gecersiz_ikinci_girdi.png)
+
+*Şekil 9. İkinci operandda binary olmayan karakter bulunduğunda programın
+girişi reddetmesi.*
+
+![](docs/screenshots/09_101_11_izli_calistirma.png)
+
+*Şekil 10. `101 x 11` örneğinin izli çalıştırmasında operand okuma ve sonuç
+yazma adımlarının görünmesi.*
+
+## 10. Test Örnekleri
 
 Program farklı girişler üzerinde test edilmiştir. Testler hem doğru sonucu hem
 de operand ayraçlarının final bantta korunup korunmadığını denetler.
@@ -251,7 +304,11 @@ python -m unittest -v
 
 Son çalıştırmada 9 test başarıyla tamamlanmıştır.
 
-## 10. Sonuç ve Değerlendirme
+![](docs/screenshots/03_test_sonucu.png)
+
+*Şekil 11. Birim testlerin tamamının başarıyla geçtiğini gösteren ekran çıktısı.*
+
+## 11. Sonuç ve Değerlendirme
 
 Bu proje, binary çarpma işlemini tek bantlı Turing Makinesi modeliyle
 izlenebilir ve doğrulanabilir biçimde gerçekleştirmektedir. Çözümün merkezinde

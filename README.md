@@ -45,6 +45,8 @@ python -m unittest -v
 - [docs/gecis_tablosu.md](docs/gecis_tablosu.md): Geçiş tablosu
 - [docs/ornek_ciktilar.md](docs/ornek_ciktilar.md): Yeniden üretilmiş örnek program ve test çıktıları
 - [docs/durum_diyagrami.png](docs/durum_diyagrami.png): Görsel durum geçiş diyagramı
+- [docs/durum_diyagrami_rapor.png](docs/durum_diyagrami_rapor.png): PDF rapor için okunaklı kompakt durum diyagramı
 - [docs/durum_diyagrami.svg](docs/durum_diyagrami.svg): SVG durum geçiş diyagramı
 - [docs/durum_diyagrami.mmd](docs/durum_diyagrami.mmd): Mermaid durum geçiş diyagramı
+- [docs/screenshots](docs/screenshots): Rapor için gerçek program çalıştırma ve test ekran görüntüleri
 - [tests/test_binary_multiplier_tm.py](tests/test_binary_multiplier_tm.py): Test örnekleri
